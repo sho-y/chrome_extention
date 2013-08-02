@@ -1,0 +1,16 @@
+#graph {
+  border: 1px solid #ccc;
+  height: 640px;
+  width: 1000px;
+}
+
+dd .switcher {
+  cursor:pointer;
+}
+dd .optionalinfo {
+  color:gray;
+}
+.hidden{
+	display:none;
+}
+

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<div class="input"></div>
+	<div class="output"></div>
+</body>
+ 
+<script>
+// View Component
+var Input = {}, Output ={};
+ 
+// Models
+var Connector = {};
+ 
+// Definitions of View Component
+Input.template = '<form> x: <input type="text" name="x"> y: <input type="text" name="y"> <br> <button type="submit">calc</button> </form>';
+ 
+Input.init = function(selector){
+	this.selector = selector;
+	this.render();
+	this.setHandler();
+}
+Input.getNumbers = function(){
+	var x = parseInt(this.selector.find("input[name=x]").val());
+	var y = parseInt(this.selector.find("input[name=y]").val());
+ 
+	if( !!x === false || !!y === false ) throw("error")
+ 
+	return [x, y]
+}
+Input.setHandler = function(){
+	Input.selector.find("form").submit(function(e){
+		e.preventDefault();
+		var nums = this.getNumbers();
+		$(this).trigger("getnum", nums)
+	}.bind(this));
+}
+Input.render = function(){
+	this.selector.html(this.template)
+}
+ 
+ 
+Output.template = '合計 : <span class="sum">#{sum}</span>'
+Output.init = function(selector){
+	this.selector = selector;
+	this.render(0);
+}
+Output.render = function(num){
+	this.selector.html(this.template.replace("#{sum}",num));
+}
+ 
+Connector.getsum = function(x, y) {
+	if(typeof(x) !== "number" || typeof(y) !== "number") 
+		throw("x and y should be number")
+	return (x + y)
+}
+// Controller
+$(Input).on("getnum", function(e, x, y){
+	var sum = Connector.getsum(x, y)
+	Output.render(sum);
+})
+ 
+// initialization
+Input.init($(".input"));
+Output.init($(".output"));
+ 
+</script>
+</html>

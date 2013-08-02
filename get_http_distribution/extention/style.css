@@ -1,0 +1,32 @@
+.btn {
+    display:inline-block;
+    padding:5px 10px;
+    color:#fff;
+    border:1px solid #69c;
+    text-decoration:none;
+    font-size:13px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+.start{
+    background-color:red;
+}
+.stop{
+    background-color:gray;
+}
+.btn.dis{
+    padding-top:6px;
+    padding-bottom:4px;
+    border:1px solid #69c;
+    color:#e0ebf5;
+    -webkit-box-shadow:inset 0px 0px 8px #334c66;
+    -moz-box-shadow:inset 0px 0px 2px #3a6da0;
+    box-shadow:inset 0px 0px 2px #3a6da0;
+}
+.start.dis{
+    background-color: #8B0000;
+}
+.stop.dis{
+    background-color: #696969;
+}

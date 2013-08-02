@@ -1,0 +1,65 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./javascripts/jquery-1.8.3.min.js"></script>
+  <script src="./javascripts/flotr2.min.js"></script>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./stylesheets/graph.css" />
+  <script src="./javascripts/result.js"></script>
+</head>
+<body>
+  <div id="main-frame"  style="margin:20px; width:6000px">
+    <div id="left_frame" style="float:left; margin-left:10px;">
+      <div class="filter">
+        <input type="button" class="btn btn-info" id="filter" value="filter"><br>
+        <label><input type="radio" name="filter_type" id="all" value="all" checked>all</label>
+        <label><input type="radio" name="filter_type" id="choose" value="choose">choose</label>
+        <table id="type_table" class="hidden">
+          <tr align="left">
+            <th><label><input type="checkbox" class="content_type" name="html">html</label></th>
+            <th><label><input type="checkbox" class="content_type" name="javascript">javascript</label></th>
+            <th><label><input type="checkbox" class="content_type" name="css">css</label></th>
+            <th><label><input type="checkbox" class="content_type" name="json">json</label></th>
+          </tr>
+          <tr align="left">
+            <th><label><input type="checkbox" class="content_type" name="image">image</label></th>
+            <th><label><input type="checkbox" class="content_type" name="audio">audio</label></th>
+            <th><label><input type="checkbox" class="content_type" name="video">video</label></th>
+            <th><label><input type="checkbox" class="content_type" name="flash">flash</label></th>
+          </tr>
+          <tr align="left">
+            <th><label><input type="checkbox" class="content_type" name="xml">xml</label></th>
+            <th><label><input type="checkbox" class="content_type" name="x-cross-domain">x-cross-domain</label></th>
+            <th><label><input type="checkbox" class="content_type" name="plain">plain</label></th>
+          </tr>   
+        </table>
+      </div>
+      <div class="table">
+        <table id="table" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th><input type="button" class="btn btn-small" id="selectall" value="Select All"><br><input type="button"   class="btn btn-small" id="deselectall" value="Deselect All"></th>
+              <th>ID</th>
+              <th><input type="button" class="btn btn-small" id="timestamp" value="Sort by TimeStamp"></th>
+              <th><input type="button" class="btn btn-small" id="url" value="Sort by URL"><br> 
+                  <input type="text" class="search-query" placeholder="Search">
+                  <a class="btn btn-small" id="search"><i class="icon-search"></i></a>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="data">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="right-frame" class="right-frame" style="float:left; margin-left:30px;">
+      <div id="graph" class="graph">
+      </div>
+      <div class="graph_download">
+      </div>
+      <div id="resource" class="resource">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+addOnload(function() {
+	var test_data=[
+	{
+		hashid:1,
+		id:1,
+		size:"-100",
+		type:"text/html"
+	},
+	{
+		hashid:1,
+		id:1,
+		size:"-1",
+		type:"text/html"
+	},
+	{
+		hashid:1,
+		id:1,
+		size:"9",
+		type:"text/html"
+	},
+		{
+		hashid:1,
+		id:1,
+		size:"25",
+		type:"text/html"
+	},
+	{
+		hashid:1,
+		id:1,
+		size:"99",
+		type:"text/html"
+	},
+		{
+		hashid:1,
+		id:1,
+		size:"990",
+		type:"text/html"
+	},
+	{
+		hashid:1,
+		id:1,
+		size:"1023",
+		type:"text/html"
+	},
+	{
+		hashid:1,
+		id:1,
+		size:"1048575",
+		type:"text/html"
+	},
+		{
+		hashid:1,
+		id:1,
+		size:"3000000",
+		type:"text/html"
+	},
+	{
+		hashid:1,
+		id:1,
+		size:"1073741823",
+		type:"text/html"
+	},
+	{
+		hashid:1,
+		id:1,
+		size:"1073741824",
+		type:"text/html"
+	}
+	];
+
+	view_Graph.render(test_data);
+});
+
+function addOnload(func) { 
+  window.addEventListener("load", func, false);
+}
